@@ -1,11 +1,11 @@
-HA-Dockermon
+**HA-Dockermon**
 Pull:
 docker pull tribunex/ha-dockermon-pi
 
 Run:
 docker run -d --name=ha-dockermon --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /docker/ha-dockermon:/config -p 8126:8126 tribunex/ha-dockermon-pi
 
-iBeacon - ARM
+**iBeacon - ARM**
 bluetooth_le.config:
 bluetooth_le_begin_command="0x08 0x0008"
 bluetooth_le_length="1E 02 01 1A 1A"
@@ -21,15 +21,15 @@ Plaatsen in /docker/ibeacon/
 Running:
 docker run -d --log-opt max-size=5m --log-opt max-file=2 -it --name ibeacon --net=host --privileged --restart=always -v /docker/ibeacon:/config fgabriel/rpi-ibeacon:latest
 
-Portainer - ARM
+**Portainer**
 Running:
 docker run -d --restart=always -p 9000:9000 --name portainer -v /var/run/docker.sock:/var/run/docker.sock -v /docker/portainer:/data portainer/portainer  
 
-Watchtower - ARM
+**Watchtower**
 Running:
 docker run -d --name watchtower -v /var/run/docker.sock:/var/run/docker.sock armhfbuild/watchtower:latest --cleanup
 
-Zigbee2mqtt - ARM
+**Zigbee2mqtt**
 Debugging:
 docker run -d --log-opt max-size=5m --log-opt max-file=2 -it --rm=true --name zigbee2mqtt -v /docker/zigbee2mqtt/data:/app/data --device=/dev/ttyACM0 koenkk/zigbee2mqtt:arm32v6
 
