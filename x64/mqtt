@@ -1,0 +1,1 @@
+docker run -tid --log-opt max-size=5m --log-opt max-file=2 --restart=always -p 1883:1883 -p 9001:9001 -v /docker/mqtt/config:/mqtt/config -v /docker/mqtt/log:/mqtt/log -v /docker/mqtt/data/:/mqtt/data/ --name mqtt toke/mosquitto
