@@ -1,0 +1,1 @@
+docker run -d --log-opt max-size=5m --log-opt max-file=2 -it --name zigbee2mqtt -v /docker/zigbee2mqtt/data:/app/data --device=/dev/ttyACM0 --restart unless-stopped koenkk/zigbee2mqtt:arm32v6
